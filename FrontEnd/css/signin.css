@@ -1,0 +1,158 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/** end reset css**/
+body {
+	max-width: 1140px;
+	margin:auto;
+	font-family: 'Work Sans' ;
+	font-size: 14px;
+    background-color: #FFFEF8;
+}
+header {
+	display: flex;
+	justify-content: space-between;
+	margin: 50px 0;
+}
+section {
+	margin: 50px 0;
+}
+
+h1{
+	display: flex;
+	flex-direction: column;
+	font-family: 'Syne';
+	font-size: 22px;
+	font-weight: 800;
+	color: #B1663C;
+}
+
+h1 > span {
+	font-family: 'Work Sans';
+	font-size:10px;
+	letter-spacing: 0.1em;
+;
+}
+
+h2{
+	font-family: 'Syne';
+	font-weight: 700;
+	font-size: 30px;
+	color: #1D6154;
+	margin-top: 40px;
+}
+nav ul {
+	display: flex;
+	align-items: center;
+	list-style-type: none;
+
+}
+nav li {
+	padding: 0 10px;
+	font-size: 1.2em;
+}
+
+li:hover {
+	color: #B1663C;
+}
+
+input[type="submit"]{
+	font-family: 'Syne';
+	font-weight: 700;
+	color: white;
+	background-color: #1D6154;
+	margin : 2em auto ;
+	width: 180px;
+    height: 36px;
+	text-align: center;
+	border-radius: 60px ;
+}
+
+.login {
+	font-weight: bold;
+	text-decoration: none;
+}
+.login a {
+	text-decoration: none;
+	color: black;
+}
+
+/** form **/
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 66vh;
+    gap: 40px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+}
+
+form a {
+ color: black;
+}
+form a:active {
+    font-weight: bold;
+}
+
+label {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+form input {
+    width: 379px;
+    height: 51px;
+    box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.09);
+    margin-bottom: 30px;
+}
+#success-message {
+	color: green;
+}
+#error-message {
+	color: red;
+	position: absolute;
+	bottom: 190px;
+}
+/** footer **/
+footer nav ul {
+	display: flex;
+	justify-content: flex-end;
+	margin: 2em;
+}

@@ -95,6 +95,15 @@ nav li {
 	font-size: 1.2em;
 }
 
+.logout a {
+	color: black;
+	text-decoration: none;
+}
+.login a {
+	color: black;
+	text-decoration: none;
+}
+
 li:hover {
 	color: #B1663C;
 }
