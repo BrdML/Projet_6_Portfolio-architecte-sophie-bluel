@@ -1,4 +1,6 @@
 import { getFilters, getWorks } from "../js/api.js"; 
+import { checkConnected, logOut } from "../js/auth.js"; 
+
 
 // Variables
 const gallery = document.querySelector('.gallery');
@@ -80,6 +82,10 @@ const udapteGalery = () => {
 };
 
 const init = async () => {
+    checkConnected()
+
+    logOut()
+    
     const data = await getFilters();
     console.log(data);
     displayFilters(data);

@@ -9,8 +9,18 @@
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./css/style.css">
+	<script src="https://kit.fontawesome.com/498154392f.js" crossorigin="anonymous"></script>
 </head>
 <body>
+<div class="admin-header">
+	<div class="btnModifier">
+		<i class="fas fa-pen-to-square"></i>
+		<span>Mode édition</span>
+	</div>
+	<div>
+		<button class="btn">publier les changements</button>
+	</div>
+</div>
 <header>
 	<h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1>
 	<nav>
@@ -18,7 +28,7 @@
 			<li>projets</li>
 			<li>contact</li>
 			<li class="login"><a href="./pages/signin.html">login</a></li>
-			<!-- <li class="logout"><a href="./pages/signin.html">Deconnexion</a></li> -->
+			<li class="logout"><a href="./pages/signin.html">Deconnexion</a></li>
 			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 		</ul>
 	</nav>
@@ -27,6 +37,10 @@
 	<section id="introduction">
 		<figure>
 			<img src="./assets/images/sophie-bluel.png" alt="">
+			<div class="modifImg">
+				<i class="fas fa-pen-to-square"></i> 
+				<span>modifier</span>
+			</div>
 		</figure>
 		<article>
 			<h2>Designer d'espace</h2>
@@ -36,7 +50,14 @@
 		</article>
 	</section>
 	<section id="portfolio">
-		<h2>Mes Projets</h2>
+		<div class="ProjetTitle">
+			<h2>Mes Projets</h2>
+			<div class="modifProjet">
+				<i class="fas fa-pen-to-square"></i> 
+				<span>modifier</span>
+			</div>
+		</div>
+
 		<div class="filter">
 			<a class="filter__btn" id="0">Tous</a>
 		</div>
