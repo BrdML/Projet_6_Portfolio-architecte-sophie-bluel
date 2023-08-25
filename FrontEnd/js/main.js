@@ -1,5 +1,6 @@
 import { getFilters, getWorks } from "../js/api.js"; 
-import { checkConnected, logOut } from "../js/auth.js"; 
+import { checkConnected, logOut } from "../js/auth.js";
+import { displayImages} from "../js/modale.js";  
 
 
 // Variables
@@ -95,5 +96,8 @@ const init = async () => {
     displayWorks(data1);
 
     udapteGalery();
+
+    const data2 = await getWorks();
+    displayImages(data2);
 }
 init();
