@@ -158,6 +158,11 @@ li:hover {
 .modifImg {
 	margin-left: 57px;
 	margin-top: 15px;
+	cursor: pointer;
+}
+
+.modifProjet {
+ cursor: pointer;
 }
 
 #introduction article {
@@ -281,6 +286,7 @@ footer nav ul {
 	left: 0;
 	bottom: 0;
 	overflow: hidden;
+	display: none;
 }
 
 .modal {
@@ -394,4 +400,5 @@ footer nav ul {
 .formInput a {
 	text-decoration: none;
 	color: red;
-} 
+}
+

@@ -1,6 +1,6 @@
 import { getFilters, getWorks } from "../js/api.js"; 
 import { checkConnected, logOut } from "../js/auth.js";
-import { displayImages} from "../js/modale.js";  
+import { displayImages, openModal ,closeModal} from "../js/modale.js";  
 
 
 // Variables
@@ -99,5 +99,9 @@ const init = async () => {
 
     const data2 = await getWorks();
     displayImages(data2);
+
+    openModal()
+
+    closeModal()
 }
 init();

@@ -1,8 +1,32 @@
 const openModale = document.querySelector('.modifProjet');
 const closeModale = document.querySelector('.modal-close');
+const modale = document.querySelector('.modal-container')
 const galleryList = document.querySelector('.galleryList');
 const ajoutForm = document.querySelector('.ajout-post');
 
+export const openModal = async() => {
+    openModale.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        modale.style.display = 'block';
+    });
+}
+
+export const closeModal = async() => {   
+    closeModale.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        modale.style.display = 'none';
+    });
+
+    modale.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        if (e.target === modale) {
+          modale.style.display = 'none';
+        }
+    });
+}
 
 export const displayImages = async (data) => {
     galleryList.innerHTML = "";
@@ -44,8 +68,3 @@ export const displayImages = async (data) => {
     });
 };
 
-
-const init = async () => {
-    displayImages()
-}
-init();
