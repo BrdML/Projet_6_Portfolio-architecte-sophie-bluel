@@ -11,6 +11,7 @@ const inputContainer = document.querySelector('.inputDisplay');
 import { getFilters, getWorks } from "../js/api.js";
 import { displayWorks } from "../js/main.js";
 
+// Fonction pour l'ouverture de la modale de gestion des projets
 export const openModal = () => {
     openModale.addEventListener('click', (e) => {
         e.preventDefault();
@@ -25,6 +26,7 @@ export const openModal = () => {
     });
 };
 
+// Fonction pour la fermeture de la modale de gestion des projets
 export const closeModal = () => {   
     closeModale.addEventListener('click', (e) => {
         e.preventDefault();
@@ -45,6 +47,8 @@ export const closeModal = () => {
     });
 };
 
+// Fonction pour l'affichage des projets dans l'accueil
+// Et ajout des boutons de suppression et deplacement
 export const displayImages = async (data) => {
     galleryList.innerHTML = "";
 
@@ -92,6 +96,7 @@ export const displayImages = async (data) => {
     });
 };
 
+// Fonction pour la gestion de l'affichage de la modale d'ajout d'image
 export const modalPhotos = () => { 
     const modaleBack = document.querySelector('.modal-back');
     const closeModaleImg = document.querySelector('.modal-close1');
@@ -139,6 +144,8 @@ export const modalPhotos = () => {
     });
 };
 
+// Fonction pour la gestion des ajouts d'images 
+// Et d'affichage de l'image ajouter
 export const ajoutImg = () => {   
     const ajoutbtn = document.getElementById('image-upload');
     const fileInput = document.getElementById('imageInput');
@@ -185,6 +192,8 @@ export const ajoutImg = () => {
 
 };
 
+// Fonction pour récuperer les categories depuis l'api et 
+// Les ajouters a l'élement select 
 export const selectCategorys = async () => { 
     const categorySelect = document.getElementById('category');
 
@@ -201,6 +210,8 @@ export const selectCategorys = async () => {
     });
 };
 
+// Fonction pour vérifier que tout les champs sont bien remplie
+// Et gestion d'envoie du formulaire
 export const conditionRemplies = async () => { 
     const fileInput = document.getElementById('imageInput');
     const titreInput = document.querySelector('.addWorkTitle');
@@ -229,8 +240,6 @@ export const conditionRemplies = async () => {
     titreInput.addEventListener('input', verifierChamps);
     categoryInput.addEventListener('change', verifierChamps);
 
-
-
     formConfirm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
@@ -244,12 +253,6 @@ export const conditionRemplies = async () => {
         formData.append('title', titreInput.value);
         formData.append('category', categoryInput.value);
 
-        
-        console.log(token)
-        console.log(fileInput.files[0])
-
-
-
         try {
             const response = await fetch(`${apiUrlWork}`, {
                 method: 'POST',
@@ -259,12 +262,10 @@ export const conditionRemplies = async () => {
                 body: formData //Corps de la requête
             });
 
-            
-
-            if (response.ok) {
-                
+            if (response.ok) {  
+                successMessage.textContent = 'Envoie Réussi';
                 setTimeout(function() {
-                    successMessage.textContent = 'Envoie réussi';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+                    successMessage.textContent = '';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
                 }, 5000);
 
                 modaleGallery.style.display = 'block';
@@ -286,6 +287,8 @@ export const conditionRemplies = async () => {
     });
 };
 
+// Fonction pour la suppréssion de projet 
+// Et mise à jours des galleries photos
 export const deleteImg = () => {
     const galleryList = document.querySelector('.galleryList');
     const successMessage = document.getElementById('successMessage');
@@ -316,8 +319,9 @@ export const deleteImg = () => {
                 console.log(response1);
     
                 if (response1.ok) {
+                    successMessage.textContent = 'Suppression réussie';
                     setTimeout(function() {
-                        successMessage.textContent = 'Suppression réussie';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+                        successMessage.textContent = '';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
                     }, 5000);
 
                     const data = await getWorks();

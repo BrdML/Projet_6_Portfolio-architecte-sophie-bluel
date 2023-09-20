@@ -7,7 +7,6 @@ const errorMessage = document.getElementById('error-message');
 
 
 const logIn = async () => {
-
     loginForm.addEventListener('submit', async (event) => {
         event.preventDefault();
 
@@ -29,7 +28,6 @@ const logIn = async () => {
             if (response.ok) {
                 const data = await response.json();
                 // console.log(data);
-
 
                 localStorage.setItem('token', data.token);
 
