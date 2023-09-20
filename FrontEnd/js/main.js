@@ -1,6 +1,14 @@
 import { getFilters, getWorks } from "../js/api.js"; 
 import { checkConnected, logOut } from "../js/auth.js";
-import { displayImages, openModal ,closeModal} from "../js/modale.js";  
+import {    displayImages, 
+            openModal , 
+            closeModal, 
+            modalPhotos, 
+            ajoutImg,
+            selectCategorys,
+            conditionRemplies,
+            deleteImg
+        } from "../js/modale.js";  
 
 
 // Variables
@@ -23,7 +31,7 @@ const displayFilters = (data) => {
 };
 
 // Fonction pour récuperer la galeries
-const displayWorks = async (data) => {
+export const displayWorks = async (data) => {
     gallery.innerHTML = "";
 
     data.forEach(work => {
@@ -83,9 +91,9 @@ const udapteGalery = () => {
 };
 
 const init = async () => {
-    checkConnected()
+    checkConnected();
 
-    logOut()
+    logOut();
     
     const data = await getFilters();
     console.log(data);
@@ -100,8 +108,18 @@ const init = async () => {
     const data2 = await getWorks();
     displayImages(data2);
 
-    openModal()
+    openModal();
 
-    closeModal()
+    modalPhotos();
+    
+    ajoutImg();
+
+    closeModal();
+
+    selectCategorys();
+
+    conditionRemplies();
+
+    deleteImg()
 }
 init();

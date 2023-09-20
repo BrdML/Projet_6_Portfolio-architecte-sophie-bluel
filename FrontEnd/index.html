@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="./css/style.css">
 	<script src="https://kit.fontawesome.com/498154392f.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body>&
 <div class="admin-header">
 	<div class="btnModifier">
 		<i class="fas fa-pen-to-square"></i>
@@ -22,7 +22,7 @@
 	</div>
 </div>
 <header>
-	<h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1>
+	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
 	<nav>
 		<ul>
 			<li>projets</li>
@@ -34,7 +34,7 @@
 	</nav>
 </header>
 <main>
-	<section id="introduction">
+	<div id="introduction">
 		<figure>
 			<img src="./assets/images/sophie-bluel.png" alt="">
 			<div class="modifImg">
@@ -48,7 +48,7 @@
 			<p>Chaque projet sera étudié en commun, de façon à mettre en valeur les volumes, les matières et les couleurs dans le respect de l’esprit des lieux et le choix adapté des matériaux. Le suivi du chantier sera assuré dans le souci du détail, le respect du planning et du budget.</p>
 			<p>En cas de besoin, une équipe pluridisciplinaire peut-être constituée : architecte DPLG, décorateur(trice)</p>
 		</article>
-	</section>
+	</div>
 	<section id="portfolio">
 		<div class="ProjetTitle">
 			<h2>Mes Projets</h2>
@@ -90,6 +90,9 @@
 </footer>
 
 <div class="modal-container">
+	<div class="backgroundModal">
+
+	</div>
 	<div class="modal" id="myModal" aria-hidden="true" role="dialog">
 		<div class="modalClose">
 			<a href="#"><i class="fa-solid fa-xmark modal-close"></i></a>
@@ -98,14 +101,66 @@
 		<h2>Galerie photo</h2>
 
 		<div class="galleryList">
-
+			
 		</div>
 
 		<hr>
 
-		<form action="" class="formInput" id="ajout-form" method="post">
-			<input type="submit" value="Ajouter une photo">
+		<form class="formInput" id="ajout-form" method="post">
+			<div id="errorMessage"></div>
+			<div id="successMessage"></div>
+			<input id="ajoutPhotos" type="submit" value="Ajouter une photo">
 			<a href="">Supprimer la galerie</a>
+		</form>
+
+	</div>
+
+	<div class="modal1" id="myModal1" aria-hidden="true" role="dialog">
+		<div class="modalClose1">
+			<a href=""><i class="fa fa-light fa-arrow-left modal-back"></i></a>
+			<a href=""><i class="fa-solid fa-xmark modal-close1"></i></a>
+		</div>
+
+		<h2>Ajout photo</h2>
+
+		<form class="addWorkForm" action="" enctype="multipart/form-data" method="post">
+			<div class="dropzone" id="dropzone">
+				<div class="imgDisplay">
+					
+				</div>
+
+				<div class="inputDisplay">
+					<i class="fa fa-thin fa-image addImgSquare" aria-hidden="true"></i>
+
+					<button type="submit" id="image-upload" class="custom-file-upload">
+						<i class="fas fa-plus"></i> Ajouter Photo
+					</button>
+	
+					<input type="file" accept="image/png, image/jpeg" name="image" id="imageInput" required=""/>
+	
+					<p> jpg, png: 4mo max</p>
+				</div>	
+			</div>
+			  
+			<div class="inputContainer">
+				<div class="inputText">
+					<label for="title">Titre</label>
+					<input class="addWorkTitle" name="title"  id="title" required="">
+				</div>
+	
+	
+				<div class="inputSelect">
+					<label for="category">Catégories</label>
+					<select class="selectCategory" name="category" id="category" required="">
+						<option value="" label=" "></option>
+					</select>
+				</div>
+			</div>
+
+			<hr>
+			<div id="errorMessage1"></div>
+			<div id="successMessage1"></div>
+			<input type="submit" value="Valider" id="confirmAddWork" disabled>
 		</form>
 
 	</div>

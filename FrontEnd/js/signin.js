@@ -25,17 +25,18 @@ const logIn = async () => {
                     password: password
                 })
             });
-
+          
             if (response.ok) {
                 const data = await response.json();
                 // console.log(data);
 
-                localStorage.setItem('userId', data.userId);
+
                 localStorage.setItem('token', data.token);
 
                 successMessage.textContent = 'Connexion réussi';
                 window.location.replace("../index.html");
             } else {
+                console.log('erreur');
                 errorMessage.textContent = 'Identifiants invalides. Veuillez réessayer.';
             }
 
@@ -47,7 +48,4 @@ const logIn = async () => {
     });
 }
 
-const init = async () => {
-    logIn();
-}
-init();
+logIn();
