@@ -15,12 +15,10 @@ import {    displayImages,
 const gallery = document.querySelector('.gallery');
 const filters = document.querySelector('.filter');
 
-// Fonction pour récuperer les filtres
+// Fonction pour récuperer les categories pour les filtres
 const displayFilters = (data) => {
     data.forEach(categorie => {
         const a = document.createElement('a');
-
-        filters.className = "filter";
 
         a.className = "filter__btn";
         a.setAttribute('id', categorie.id);
@@ -30,7 +28,7 @@ const displayFilters = (data) => {
     });
 };
 
-// Fonction pour récuperer la galeries
+// Fonction pour afficher les projets dans la galerie
 export const displayWorks = async (data) => {
     gallery.innerHTML = "";
 
@@ -50,14 +48,27 @@ export const displayWorks = async (data) => {
     });
 };
 
-// Fonction pour récuperer la galeries en fonction du filtre
+// Fonction pour récuperer les projets en fonction du filtre
 const udapteGalery = () => {
     const tous = document.querySelector('.filter__btn[id="0"]');
     const objets = document.querySelector('.filter__btn[id="1"]');
     const appartements = document.querySelector('.filter__btn[id="2"]');
     const hotel = document.querySelector('.filter__btn[id="3"]');
+    const btnFilters = document.querySelectorAll('.filter__btn');
 
-    // console.log(tous)
+    tous.classList.add('active');
+    
+    btnFilters.forEach(button => {
+
+        console.log(btnFilters)
+        button.addEventListener('click', () => {
+
+            btnFilters.forEach(btn => btn.classList.remove('active'));
+
+            button.classList.add('active');
+        });
+    });
+
 
     tous.addEventListener('click', async () => {
          // console.log("Tous")

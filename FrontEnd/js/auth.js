@@ -35,10 +35,8 @@ export const checkConnected = () => {
 }
 
 export const logOut = () => {
-
     displayLogout.addEventListener("click",() =>{
 
-        window.localStorage.removeItem("userId");
         window.localStorage.removeItem("token");
     });
 

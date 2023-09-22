@@ -187,6 +187,10 @@ li:hover {
 	width: 100%;
 	padding: 40px;
 }
+.filter .active {
+	background-color: #1D6154;
+	color: white;
+}
 .filter__btn {
 	background-color: white;
 	color: #1D6154;
@@ -302,9 +306,9 @@ footer nav ul {
 	background-color: white;
 	border-radius: 10px;
 	width: 630px;
-	height: 541px;
+	height: 561px;
 	position: absolute;
-	top: 76px;
+	top: 52px;
 	left: 365px;
 	text-align: center;
 }
@@ -313,9 +317,9 @@ footer nav ul {
 	background-color: white;
 	border-radius: 10px;
 	width: 630px;
-	height: 541px;
+	height: 561px;
 	position: absolute;
-	top: 76px;
+	top: 52px;
 	left: 365px;
 	text-align: center;
 	display: none;
@@ -332,16 +336,16 @@ footer nav ul {
 }
 
 .modalClose a {
-	padding: 20px;
+	padding: 15px;
 }
 
 .modalClose1 a {
-	padding: 20px;
+	padding: 15px;
 }
 
 .modal hr {
-	width: 420px;
-	margin-top: 25px;
+	width: 505px;
+	margin-top: 20px;
 }
 
 .modal1 hr {
@@ -355,7 +359,7 @@ footer nav ul {
 }
 
 .modal h2 {
-	padding: 0px 20px 20px 20px;
+	padding-bottom: 10px;
 	font-family: 'Work Sans';
 	font-size: 26px;
 	font-style: normal;
@@ -506,19 +510,17 @@ footer nav ul {
 }
 
 .galleryList {
-	width: 67%;
+	width: 80%;
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 	grid-column-gap: 10px;
 	grid-row-gap: 10px;
-	overflow-y: scroll;
-	scrollbar-width: thin; 
-	height: 305px;
 	margin: auto;
 }
+
 .galleryList img {
-	width: 120px;
-	height: 150px;
+	width: 90px;
+	height: 95px;
 }
 
 .galleryList figure{
