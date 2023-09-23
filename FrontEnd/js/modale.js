@@ -66,10 +66,6 @@ export const displayImages = async (data) => {
 
         a.classList.add('trashBtn');
         a.setAttribute('id', work.id);
-        a.setAttribute('data-id', work.id);
-
-        figure.setAttribute('data-id', work.id);
-        figure.classList.add('trashFigure');
 
         editTrash.classList.add('fas', 'fa', 'fa-light', 'fa-trash-can');
         
@@ -299,10 +295,11 @@ export const deleteImg = () => {
         e.preventDefault();
     
         const trashBtn = e.target.closest('.trashBtn');
+        console.log(trashBtn);
     
         if (trashBtn) {
             const apiUrl1 = 'http://localhost:5678/api/works';
-            const id = trashBtn.getAttribute('data-id');
+            const id = trashBtn.getAttribute('id');
             const token = localStorage.getItem('token');
     
             console.log(id);
